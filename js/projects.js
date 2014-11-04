@@ -2,6 +2,7 @@ require.config({
     paths: {
         "jquery": "http://code.jquery.com/jquery-2.1.1.min",
         "marked": "http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min"
+        //"typeahead" : "http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle"
     },
     shim: {
 		//"typeahead": ["jquery"]
@@ -13,7 +14,7 @@ require(["jquery"], function($) {
 		//display few features from latest version here
 		$.support.cors = true;
 
-		var baseUrl = "https://raw.githubusercontent.com/dotnetfoundation/home/95e7732af7f0cc31581c2b86952feca063d0f969/projects/";
+		var baseUrl = "https://dotnetweb.blob.core.windows.net/foundation/";
 		var projects = baseUrl + "projects.json";
 		var contributors = [];
 		$.getJSON(projects,function (data){
