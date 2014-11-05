@@ -1,11 +1,11 @@
 require.config({
     paths: {
         "jquery": "http://code.jquery.com/jquery-2.1.1.min",
-        "marked": "http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min"
-        //"typeahead" : "http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle"
+        "marked": "http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min",
+        "typeahead" : "http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle"
     },
     shim: {
-		//"typeahead": ["jquery"]
+		"typeahead": ["jquery"]
 	}
 });
 
@@ -17,8 +17,10 @@ require(["jquery"], function($) {
 		var baseUrl = "https://dotnetweb.blob.core.windows.net/foundation/";
 		var projects = baseUrl + "projects.json";
 		var contributors = [];
+
 		$.getJSON(projects,function (data){
 			var projectRow;
+			var contributorRow;
 			var projects = data["projects"];
 			for (i = 0; i <projects.length; i++)
 			{
@@ -31,7 +33,15 @@ require(["jquery"], function($) {
 				writeProjectTitle(projects[i], projectRow);
 				if (contributors.indexOf(projects[i].contributor) == -1)
 				{
-					$("#contributors").append("<h4 class='col-md-4'>" + projects[i].contributor + "</h4>");
+					if (contributors.length == 0 || contributors.length % 3 == 0)
+					{
+						var rowName = "crow"+ i; 
+						$("#contributors").append("<div class='row' id='"+ rowName+"'' style='margin-top:15px;margin-bottom:15px; margin-left:10px;'></div>");
+						contributorRow = $("#" + rowName);
+					}
+					var index = data["contributors"].map(function(x) {return x.name; }).indexOf(projects[i].contributor);
+					var contributor = data["contributors"][index];
+					$(contributorRow).append("<div class='col-md-4'><div><a href='" +contributor.web+"'><img src='" + contributor.logo+ "' style='max-height:200;width:200;'/></a></div>");
 					contributors.push(projects[i].contributor);
 				}
 				
