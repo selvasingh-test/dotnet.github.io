@@ -19,7 +19,8 @@ require(["jquery"], function($) {
 		var contributors = [];
 		$.getJSON(projects,function (data){
 			var projectRow;
-			for (i = 0; i <data.length; i++)
+			var projects = data["projects"];
+			for (i = 0; i <projects.length; i++)
 			{
 				if (i == 0 || i % 3 == 0)
 				{
@@ -27,11 +28,11 @@ require(["jquery"], function($) {
 					$("#projects").append("<div class='row' id='"+ rowName+"''></div>");
 					projectRow = $("#" + rowName);
 				}
-				writeProjectTitle(data[i], projectRow);
-				if (contributors.indexOf(data[i].contributor) == -1)
+				writeProjectTitle(projects[i], projectRow);
+				if (contributors.indexOf(projects[i].contributor) == -1)
 				{
-					$("#contributors").append("<h4 class='col-md-4'>" + data[i].contributor + "</h4>");
-					contributors.push(data[i].contributor);
+					$("#contributors").append("<h4 class='col-md-4'>" + projects[i].contributor + "</h4>");
+					contributors.push(projects[i].contributor);
 				}
 				
 			}
