@@ -10,8 +10,29 @@
 </head>
 <body>
 
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+      <img alt=".NET Foundation" src="\img\dotnet_logo_sm.png" height="30px">
+      </a>
+    </div>
 
-<div class="bs-docs-header" id="content" style="padding-top:25px;padding-bottom:25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#Projects">Projects</a></li>
+        <li><a href="#Contributors">Contributors</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input class="typeahead" type="text" placeholder="Search projects">
+        </div>
+      </form>
+      </ul>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="bs-docs-header" id="content" style="padding-top:100px;padding-bottom:25px;">
   <div class="container">
 	<h1>.NET Foundation</h1>
 	<p>The .NET Foundation is an independent forum to foster the open development and collaboration of open source technologies for .NET.</p>
@@ -20,7 +41,7 @@
 
 <div class="container" style="width:700px;margin-left:350px;">
 <div id="the-basics">
-  <input class="typeahead" type="text" placeholder="Search projects">
+  
 </div>
 </div>
 <div class="container">
@@ -33,14 +54,50 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.js"></script>	
 <script src="js/projects.js"></script>
 
+<!-- Footer -->
+<footer class="bs-docs-footer" role="contentinfo">
+      <div class="container">
+        <div class="bs-docs-social">
+      <ul class="bs-docs-social-buttons">
+        <li class="follow-btn">
+          <iframe id="twitter-widget-0" 
+            src="//platform.twitter.com/widgets/follow_button.html?screen_name=dotnetfdn&amp;show_count=true&amp;show_screen_name=true&amp;size=m"
+            style="width: 300px; height: 20px;"
+            allowtransparency="true"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </li>
+      </ul>
+    </div>
+
+    <p>Brought to you with love, with sprinkling of 
+       <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, 
+       <a href="https://github.com/chjj/marked" target="_blank">marked</a>,
+       and
+       <a href="http://requirejs.org/" target="_blank">RequireJS</a>.
+    </p>
+
+    <ul class="bs-docs-footer-links muted">
+      <li><a href="http://dotnetfoundation.org/">.NET Foundation</a></li>
+      <li>·</li>
+      <li><a href="http://dotnetfoundation.org/getinvolved">Get Involved</a></li>
+      <li>·</li>
+      <li><a href="http://dotnetfoundation.org/faq">FAQ</a></li>
+      <li>·</li>
+      <li><a href="http://dotnetfoundation.org/news">News</a></li>
+    </ul>
+  </div>
+</footer>
+
 <style type="text/css">
 	
 .typeahead,
 .tt-query,
 .tt-hint {
   width: 396px;
-  height: 30px;
-  padding: 8px 12px;
+  height: 32px;
+  padding: 0px 12px;
   font-size: 24px;
   line-height: 30px;
   border: 2px solid #ccc;
