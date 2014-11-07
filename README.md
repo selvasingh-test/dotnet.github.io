@@ -1,2 +1,1 @@
-dotnetfoundation.github.io
-==========================
+# github.io page for the .NET Foundation
