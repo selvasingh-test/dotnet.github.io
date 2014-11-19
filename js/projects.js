@@ -15,7 +15,6 @@ require(["jquery"], function ($) {
 
             function writeProjectTitle(project, row) {
                 $.get(baseUrl + project.name, function (data) {
-                    //$("#projects").append("<h4 class='col-md-4'>" + project + "</h4>");
                     require(["marked"], function (marked) {
                         var paraCount = 0;
                         var renderer = new marked.Renderer();
@@ -47,7 +46,7 @@ require(["jquery"], function ($) {
             }
 
             function writeProjects(projects, pattern) {
-                $("#projects").empty();
+                $("#projects-div").empty();
                 var projectCount = 0;
                 var projectRow;
 
@@ -58,7 +57,7 @@ require(["jquery"], function ($) {
 
                     if (projectCount == 0 || projectCount % 3 == 0) {
                         var rowName = "prow" + projectCount;
-                        $("#projects").append("<div class='row' id='" + rowName + "''></div>");
+                        $("#projects-div").append("<div class='row' id='" + rowName + "''></div>");
                         projectRow = $("#" + rowName);
                     }
                     writeProjectTitle(projects[i], projectRow);
@@ -71,7 +70,7 @@ require(["jquery"], function ($) {
                 for (i = 0; i < contributors.length; i++) {
                     if (i == 0 || i % 3 == 0) {
                         var rowName = "crow" + i;
-                        $("#contributors").append("<div class='row' id='" + rowName + "'' style='margin-top:15px;margin-bottom:15px; margin-left:10px;'></div>");
+                        $("#contributors-div").append("<div class='row' id='" + rowName + "'' style='margin-top:15px;margin-bottom:15px; margin-left:10px;'></div>");
                         contributorRow = $("#" + rowName);
                     }
                     $(contributorRow).append("<div class='col-md-4'><div><a href='" + contributors[i].web + "'><img src='" + contributors[i].logo + "' style='max-height:200px;width:200px;'/></a></div>");
