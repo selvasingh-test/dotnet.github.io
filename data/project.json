@@ -1,4 +1,4 @@
-﻿[
+[
     {
       "GithubOrg": "couchbase",
       "GithubRepo": "couchbase-lite-net",
@@ -24,7 +24,7 @@
     {
       "GithubOrg": "aspnet",
       "GithubRepo": "Home",
-      "Name": "ASP.NET",
+      "Name": "ASP.NET vNext",
       "Url": "https://asp.net/",
       "Description": "ASP.NET is an open source web framework for building great web sites and applications.",
       "Language": "C#",
@@ -47,6 +47,14 @@
     {
       "GithubOrg": "projectkudu",
       "GithubRepo": "kudu",
+      "Contributor" : "Microsoft"
+    },
+    {
+      "CodePlexProject": "http://aspnetwebstack.codeplex.com",
+      "Contributor" : "Microsoft"
+    },
+    {
+      "CodePlexProject": "http://entityframework.codeplex.com",
       "Contributor" : "Microsoft"
     },
     {
