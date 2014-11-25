@@ -91,5 +91,15 @@
       "GithubOrg": "umbraco",
       "GithubRepo": "Umbraco-CMS",
       "Contributor" : "Umbraco"
+    },
+    {
+      "GithubOrg": "dotnet",
+      "GithubRepo": "corefx",
+      "Contributor" : "Microsoft"
+    },
+    {
+      "GithubOrg": "dotnet",
+      "GithubRepo": "buildtools",
+      "Contributor" : "Microsoft"
     }
 ]
